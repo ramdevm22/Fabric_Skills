@@ -1,0 +1,7 @@
+I want to find all Lakehouses across my Microsoft Fabric workspaces, since I don't know which workspace they are in.
+
+Using ONLY the instructions in the skill document provided to you, give me:
+1. The exact `az rest` command (with body) I should run to do this.
+2. A one-sentence explanation of why you chose Catalog Search instead of listing workspaces directly.
+
+Do not invent any API endpoint, filter syntax, or parameter that isn't in the skill document.
