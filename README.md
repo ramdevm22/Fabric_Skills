@@ -21,7 +21,7 @@ skillsWorkbench_1/
 ├── .env                          ← API keys (never share this)
 ├── .gitignore                    ← keeps .env and venv out of git
 ├── results.md                    ← auto-filled benchmark results
-├── SUMMARY.md                    ← one page findings for mentor
+├── SUMMARY.md                    ← one page findings
 ├── README.md                     ← this file
 │
 ├── skills/
