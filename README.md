@@ -84,7 +84,7 @@ venv\Scripts\Activate
 
 **LangChain (OpenRouter):**
 ```powershell
-python frameworks/openrouter/run_test.py
+python frameworks/Langchain/run_test.py
 ```
 
 **smolagents:**
