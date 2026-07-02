@@ -49,7 +49,7 @@ skillsWorkbench_1/
 ## Prerequisites
 
 - Python 3.11 or 3.12 recommended (3.14 has SSL compatibility issues)
-- OpenRouter API key (from mentor) — set in `.env` file
+- OpenRouter API key — set in `.env` file
 - Org Microsoft Fabric account — for verification script only
 
 ---
@@ -63,7 +63,7 @@ python -m venv venv
 venv\Scripts\Activate.ps1
 ```
 
-**Step 2 — Install all packages at once:**
+**Step 2 — Install all packages:**
 ```powershell
 pip install langchain langchain-openai smolagents openai google-adk litellm autogen-agentchat "autogen-ext[openai]" azure-identity requests
 ```
@@ -79,7 +79,7 @@ OPENROUTER_API_KEY=your-key-here
 
 Activate venv first every time you open a new terminal:
 ```powershell
-venv\Scripts\Activate.ps1
+venv\Scripts\Activate
 ```
 
 **LangChain (OpenRouter):**
@@ -153,27 +153,11 @@ Open any `run_test.py` and change the MODEL line at the top:
 ```python
 # Current:
 MODEL = "openai/gpt-4o-mini"
-
-# Faster options (paid):
-MODEL = "google/gemini-2.5-flash-lite"   # fastest tested — 2.61s
-MODEL = "anthropic/claude-3-haiku"       # best reasoning — 3.88s
-
-# Free option (no credits used):
-MODEL = "openrouter/free"                # auto-selects any available free model
 ```
 
 Keep the same model across all frameworks for a fair comparison.
 
 ---
-
-## How to Use Paid vs Free Models
-
-- Model name ending in `:free` → zero credits consumed from mentor's subscription
-- Model name without `:free` → uses credits (check usage at openrouter.ai → Activity)
-- For benchmarking: use free models to test, paid models only when mentor requests
-
----
-
 ## Key Findings
 
 | Framework | Time (gpt-4o-mini) | Recommendation |
@@ -191,10 +175,4 @@ See `SUMMARY.md` for full findings and recommendation to mentor.
 
 **Google ADK curly brace issue:**
 Google ADK treats `{variable}` patterns in instruction text as template variables. Since SKILL.md contains JSON like `{"search": ""}`, a regex workaround replaces curly braces with square brackets before passing to ADK. The LLM still correctly follows the skill but outputs `[[search]]` instead of `{"search"}` in JSON examples.
-
-**SSL error on org network:**
-If you see `CERTIFICATE_VERIFY_FAILED`, add `http_client=httpx.Client(verify=False)` to the LLM client. This is caused by org network SSL inspection and is safe for local testing.
-
-**Python 3.14 compatibility:**
-Some packages have SSL issues with Python 3.14. Use Python 3.11 or 3.12 if possible.
 
