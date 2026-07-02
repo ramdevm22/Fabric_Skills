@@ -21,7 +21,7 @@ skillsWorkbench_1/
 ├── .env                          ← API keys (never share this)
 ├── .gitignore                    ← keeps .env and venv out of git
 ├── results.md                    ← auto-filled benchmark results
-├── SUMMARY.md                    ← one page findings for mentor
+├── SUMMARY.md                    ← one page findings
 ├── README.md                     ← this file
 │
 ├── skills/
@@ -167,7 +167,7 @@ Keep the same model across all frameworks for a fair comparison.
 | smolagents | 7.70s | ⚠️ Acceptable |
 | Google ADK | 9.21s | ❌ Slowest, setup complexity, skill doc compatibility issue |
 
-See `SUMMARY.md` for full findings and recommendation to mentor.
+See `SUMMARY.md` for full findings and recommendation
 
 ---
 
