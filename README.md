@@ -167,14 +167,6 @@ Keep the same model across all frameworks for a fair comparison.
 | smolagents | 7.70s | ⚠️ Acceptable |
 | Google ADK | 9.21s | ❌ Slowest, setup complexity, skill doc compatibility issue |
 
-<<<<<<< HEAD
-See `SUMMARY.md` for full findings and recommendation
-=======
-See `SUMMARY.md` for full findings and recommendation.
->>>>>>> c60aa7c411314b096babb18d5aaef3084a6183e7
-
----
-
 ## Known Issues
 
 **Google ADK curly brace issue:**
